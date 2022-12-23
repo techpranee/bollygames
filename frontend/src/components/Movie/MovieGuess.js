@@ -18,7 +18,7 @@ export default function MovieGuess() {
     const selectedMovie = useRef(0)
     const fetchMovies = async () => {
         try {
-            let resp = await axios.get(`http://localhost:3000/api/movies?page=${page}&lang=${lang}`, {
+            let resp = await axios.get(`/api/movies?page=${page}&lang=${lang}`, {
                 headers: { "Accept-Encoding": "gzip,deflate,compress" }
             });
             console.log(resp.status)

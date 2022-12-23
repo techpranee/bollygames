@@ -16,7 +16,7 @@ export default function Jumble() {
 
   const fetchMovies = async () => {
     try {
-      let resp = await axios.get(`http://localhost:3000/api/movies?page=${page}&lang=${lang}`);
+      let resp = await axios.get(`/api/movies?page=${page}&lang=${lang}`);
       console.log(resp.status)
       if (resp.status === 200) {
         if (movies.current.length < page * 20) {
