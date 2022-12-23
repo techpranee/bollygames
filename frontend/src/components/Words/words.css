@@ -1,0 +1,78 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.SlotMachine {
+  margin-top: 40vh;
+  height: 90vh;
+  width: 100vw;
+  text-align: center;
+}
+.slot {
+  position: relative;
+  display: inline-block;
+  height: 10vw;
+  width: 10vw;
+}
+
+section {
+  position: absolute;
+  border-radius: 15px !important;
+  border: 3px solid black !important;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  border: 1px solid #ffffff;
+  color: #222048;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 50px;
+  line-height: 100px;
+  cursor: default;
+}
+
+.container {
+  position: absolute;
+  top: 2px;
+  width: 100%;
+  transition: top ease-in-out 0.5s;
+  text-align: center;
+}
+
+.roll {
+  width: 215px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 3px solid black;
+  margin: auto;
+}
+
+.rolling {
+  animation: blinkingText 1.2s infinite;
+  margin: auto;
+}
+
+@keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: #000;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #000;
+  }
+}

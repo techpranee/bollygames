@@ -3,30 +3,11 @@
   <head>
     <title>Secret Santa</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script>
-      function validateForm() {
-        let x = document.forms["myForm"]["fname"].value;
-        if (x == "") {
-          alert("Name must be filled out");
-          return false;
-        }
-      }
-    </script>
+    <%-include('./partials/socket.ejs') %>
   </head>
   <body>
-    <h1>Secret Santa</h1>
-    <form
-      name="myForm"
-      action="/confirm"
-      method="post"
-    >
-      <label for="par">Whom are you gifting</label>
-      <select id="par" name="par">
-        <% participants.forEach(e => { %>
-        <option value="<%= e %>"><%= e %></option>
-        <% }) %>
-      </select>
-      <input type="submit" value="Submit" />
-    </form>
+    <h1>Happy New Year 2023 !</h1>
+    <% movies.forEach(e => { %> <%-include('./partials/moviecard.ejs', {movie:
+    e}) %> <% }) %>
   </body>
 </html>

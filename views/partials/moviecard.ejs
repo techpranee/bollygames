@@ -1,0 +1,46 @@
+<div className="col-xs-12 cardcont nopadding">
+  <div
+    className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5"
+  >
+    <h1><%= movie.title %></h1>
+    <!-- adult: false,
+    backdrop_path: '/xpu8enBAtOHo8KS5eGNONsC6GaS.jpg',
+    genre_ids: [Array],
+    id: 256040,
+    original_language: 'te',
+    original_title: 'బాహుబలి:ద బిగినింగ్',
+    overview: 'The young Shivudu is left as a foundling in a small village by his mother. By the time he’s grown up, it has become apparent that he possesses exceptional gifts. He meets the beautiful warrior princess Avanthika and learns that her queen has been held captive for the last 25 years. Shividu sets off to rescue her, discovering his own origins in the process.',
+    popularity: 28.749,
+    poster_path: '/9BAjt8nSSms62uOVYn1t3C3dVto.jpg',
+    release_date: '2015-07-10',
+    title: 'Bāhubali: The Beginning',
+    video: false,
+    vote_average: 7.6,
+    vote_count: 623 -->
+    <span className="tagline"><%= movie.tagline %></span>
+    <p><%= movie.overview %></p>
+    <!-- <div className="additional-details">
+      <span className="genre-list">{genresList}</span>
+      <span className="production-list">{productionList}</span>
+      <div className="row nopadding release-details">
+        <div className="col-xs-6">
+          Original Release: <span className="meta-movie">{movie.release}</span>
+        </div>
+        <div className="col-xs-6">
+          Running Time: <span className="meta-movie">{movie.runtime} mins</span>
+        </div>
+        <div className="col-xs-6">
+          Box Office: <span className="meta-movie">{totalRevenue}</span>
+        </div>
+        <div className="col-xs-6">
+          Vote Average: <span className="meta-movie">{movie.vote}</span>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <div
+    className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7 "
+  >
+    <img id="postertest" class="poster" src="https://image.tmdb.org/t/p/w500<%= movie.backdrop_path %>"/>
+  </div>
+</div>

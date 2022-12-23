@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico");
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+html {
+  background: #222048;
+}
+a{
+  text-decoration: none;
+}
+.gamesbutton {
+  position: sticky;
+  bottom: "25px";
+}

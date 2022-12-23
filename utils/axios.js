@@ -7,6 +7,7 @@ const Axios = setupInterceptorsTo(axios.create({
     params: { api_key: '30578880989d317a3d751c8055e6fec9' },
     headers: {
         "Content-Type": "application/json",
+        "Accept-Encoding": "gzip,deflate,compress"
     },
 }));
 
