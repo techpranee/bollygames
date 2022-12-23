@@ -76,7 +76,7 @@ export default function MovieGuess() {
                         <img id="c" src={movies.current[selectedMovie.current]?.backdrop_path ? `https://image.tmdb.org/t/p/w500${movies.current[selectedMovie.current].backdrop_path}` : `https://image.tmdb.org/t/p/w500${movies.current[selectedMovie.current].poster_path}`} alt="" />
                     </div>
                     <div className="blog-slider__content">
-                        <Timer start={start} duration={2} timeup={timeup} getCompletion={getCompletion} />
+                        <Timer start={start} duration={30} timeup={timeup} getCompletion={getCompletion} />
                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
                             <Button onClick={blurimg}>Start</Button>
                             <Button onClick={() => setresult(true)}>Reveal</Button>
