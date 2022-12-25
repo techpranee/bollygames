@@ -34,7 +34,7 @@ function Layout() {
     };
 
     return (<>
-    
+
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -110,17 +110,17 @@ function Layout() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        Welcome 2023
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                    <Link to="/movie-guess"><Button sx={{ my: 2, color: 'white', display: 'block' }}>Movie Guess</Button></Link>
+                        <Link to="/movie-guess"><Button sx={{ my: 2, color: 'white', display: 'block' }}>Movie Guess</Button></Link>
                         <Link to="/create-words"><Button sx={{ my: 2, color: 'white', display: 'block' }}>Create Words</Button></Link>
                         <Link to="/jumble"><Button sx={{ my: 2, color: 'white', display: 'block' }}>Movie Jumble</Button></Link>
                     </Box>
                 </Toolbar>
             </Container>
         </AppBar>
-        </>
+    </>
     );
 }
 export default Layout;

@@ -149,7 +149,7 @@ class Words extends Component {
                 <div style={{
                     textAlign: 'center', margin: 'auto', backgroundColor: '#fff', width: '500px',
                     borderRadius: '20px', marginTop: '20px'
-                }}><Timer start={this.state.timer} duration={60} timeup={this.timeup} getCompletion={() => null} /></div>
+                }}><Timer start={this.state.timer} duration={60} timeup={this.timeup} getCompletion={() => null} reset={false} /></div>
 
             </div>
         );

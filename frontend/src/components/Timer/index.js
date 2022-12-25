@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import './timer.css'
-export default function Timer({ start, duration, timeup, getCompletion }) {
+export default function Timer({ start, duration, timeup, getCompletion, reset }) {
     const FULL_DASH_ARRAY = 283;
     const WARNING_THRESHOLD = 10;
     const ALERT_THRESHOLD = 5;
@@ -27,14 +27,28 @@ export default function Timer({ start, duration, timeup, getCompletion }) {
             // reset all values 
             timeLeft.current = duration;
             timePassed.current = 0
+            setRemainingPathColor();
             startTimer();
         }
         return () => clearInterval(timerIntervalId.current);
     }, [start])
 
+    useEffect(() => {
+        console.log('resetting timer')
+        if (reset === true) {
+            timeLeft.current = duration;
+            timePassed.current = 0
+            setRemainingPathColor(timeLeft.current);
+            setCircleDasharray();
+            clearInterval(timerIntervalId.current);
+        }
+    }, [reset])
+
+
     const resetState = () => {
         console.log('time is up')
         clearInterval(timerIntervalId.current)
+        setRemainingPathColor(timeLeft.current);
         timeup()
     }
     const getPercentTimeCompletion = () => {
@@ -71,8 +85,13 @@ export default function Timer({ start, duration, timeup, getCompletion }) {
     }
 
     function setRemainingPathColor(timeLeft) {
+        console.log('setting timer color')
         const { alert, warning, info } = COLOR_CODES;
+        console.log(timeLeft, 'timeLeft')
+        console.log(alert.threshold, 'alert.threshold')
+        console.log(warning.threshold, 'warning.threshold')
         if (timeLeft <= alert.threshold) {
+            console.log('this')
             document
                 .getElementById("base-timer-path-remaining")
                 .classList.remove(warning.color);
@@ -80,12 +99,24 @@ export default function Timer({ start, duration, timeup, getCompletion }) {
                 .getElementById("base-timer-path-remaining")
                 .classList.add(alert.color);
         } else if (timeLeft <= warning.threshold) {
+            console.log('that')
             document
                 .getElementById("base-timer-path-remaining")
                 .classList.remove(info.color);
             document
                 .getElementById("base-timer-path-remaining")
                 .classList.add(warning.color);
+        } else {
+            console.log('reset color')
+            document
+                .getElementById("base-timer-path-remaining")
+                .classList.remove(info.color);
+            document
+                .getElementById("base-timer-path-remaining")
+                .classList.remove(alert.color);
+            document
+                .getElementById("base-timer-path-remaining")
+                .classList.add(info.color);
         }
     }
 

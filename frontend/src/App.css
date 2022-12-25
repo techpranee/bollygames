@@ -12,10 +12,22 @@
 html {
   background: #222048;
 }
-a{
+a {
   text-decoration: none;
 }
 .gamesbutton {
   position: sticky;
   bottom: "25px";
+}
+
+.alphabet {
+  background-color: aliceblue;
+  color: #222048;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+}
+
+.whiteback {
+  background-color: aliceblue;
 }

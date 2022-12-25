@@ -17,11 +17,9 @@ export default function Jumble() {
   const fetchMovies = async () => {
     try {
       let resp = await axios.get(`/api/movies?page=${page}&lang=${lang}`);
-      console.log(resp.status)
       if (resp.status === 200) {
         if (movies.current.length < page * 20) {
           movies.current = [...movies.current, ...resp.data.results]
-          console.log(movies.current);
         }
         setloaded(true)
       }
@@ -32,11 +30,29 @@ export default function Jumble() {
 
   useEffect(() => {
     fetchMovies()
-  }, [page])
+  }, [page, lang])
   function getWordsArray(str) {
     return str.split(" ")
   }
-
+  function toggleLanguage(l) {
+    switch (l) {
+      case 'hi':
+        setlang('te')
+        movies.current = [];
+        selectedMovie.current = 0;
+        break;
+      case 'te':
+        setlang('hi')
+        movies.current = [];
+        selectedMovie.current = 0;
+        break;
+      default:
+        setlang('te')
+        movies.current = [];
+        selectedMovie.current = 0;
+        break;
+    }
+  }
   const checkForMoreMovies = () => {
     if (page * 20 < selectedMovie.current + 5) {
       setloaded(false)
@@ -57,6 +73,7 @@ export default function Jumble() {
     {loaded === true ? <div className="SlotMachine">
       <ButtonGroup variant="contained" aria-label="outlined primary button group" sx={{ marginBottom: 20 }}>
         <Button onClick={() => setresult(!result)}>Reveal</Button>
+        <Button onClick={() => toggleLanguage(lang)}>Change Language</Button>
         <Button onClick={nextMovie}>Next</Button>
       </ButtonGroup>
       {getWordsArray(movieName).map((w, i) => <Word word={w} key={i} />)}
